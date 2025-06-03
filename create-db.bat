@@ -1,0 +1,1 @@
+docker run --name testdb3 --d -p 1436:1433 -e "MSSQL_SA_PASSWORD= G52ndT0ur " -e "ACCEPT_EULA=Y"  mcr.microsoft.com/mssql/server:2022-latest
