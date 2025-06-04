@@ -1,0 +1,24 @@
+﻿@model List<DessertStore.Models.Product>
+
+<h2>Our Desserts</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Price</th>
+            <th>In Stock</th>
+            <th>Images</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td><a asp-action="Details" asp-route-id="@product.Id">@product.Title</a></td>
+                <td>@product.Price</td>
+                <td>@(product.InStock ? "Yes" : "No")</td>
+                <td>@product.Images.Count</td>
+            </tr>
+        }
+    </tbody>
+</table>
