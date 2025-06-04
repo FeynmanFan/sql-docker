@@ -1,0 +1,26 @@
+services:
+  app:
+    build:
+      context: ./DessertStore
+      dockerfile: Dockerfile
+    container_name: dessertstore_app
+    ports:
+      - "8080:80" 
+    depends_on:
+      - testdb
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+
+  testdb:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: testdb
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=G52ndT0ur
+    ports:
+      - "1433:1433"
+    volumes:
+      - C:/SqlVolume/data:/var/opt/mssql/data 
+      - C:/SqlVolume/log:/var/opt/mssql/log 
+      - C:/SqlVolume/secrets:/var/opt/mssql/secrets
