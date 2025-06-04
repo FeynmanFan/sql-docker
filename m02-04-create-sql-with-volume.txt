@@ -1,0 +1,1 @@
+docker run --name testdb -d -p 1433:1433 -v C:/SqlVolume/data:/var/opt/mssql/data -v C:/SqlVolume/log:/var/opt/mssql/log -v C:/SqlVolume/secrets:/var/opt/mssql/secrets -e "MSSQL_SA_PASSWORD=G52ndT0ur" -e "ACCEPT_EULA=Y" mcr.microsoft.com/mssql/server:2022-latest

@@ -1,0 +1,5 @@
+# Execute these commands separately; executing all at once won't work
+
+docker exec it testdb /bin/bash
+
+docker cp testdb:/var/opt/mssql/data/DessertStore.bak C:/backup/DessertStore.bak
